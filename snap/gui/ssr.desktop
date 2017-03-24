@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=SimpleScreenRecorder
+GenericName=SimpleScreenRecorder
+Comment=A utility to record computer screen
+Keywords=recorder,screen
+Exec=simplescreenrecorder
+Icon=${SNAP}/meta/gui/icon.png
+Terminal=false
+StartupNotify=true

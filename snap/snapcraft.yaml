@@ -1,0 +1,32 @@
+name: simplescreenrecorder
+version: '0.1' 
+summary: ssr
+description: |
+  This is simple screen recorder snap application
+
+grade: stable
+confinement: strict 
+
+apps:
+  simplescreenrecorder:
+    command: desktop-launch $SNAP/usr/bin/simplescreenrecorder
+    plugs:
+      - network
+      - unity7
+      - x11
+      - home
+      - opengl
+      - pulseaudio
+
+parts:
+  app:
+    source: ./simplescreenrecorder_0.3.6_amd64.deb
+    plugin: dump
+    stage-packages:
+      - overlay-scrollbar-gtk2
+      - libgail-3-0
+      - libatk-bridge2.0-0
+      - libatk-adaptor
+      - unity-gtk2-module:amd64
+      - libcanberra-gtk-module:amd64
+    after: [desktop-qt4]
